@@ -11,23 +11,13 @@ var dataset, svg, bandScale;
 			function createChart() {
 				var w = 1000;
 				var h = 300;
+				var margin = {top: 20, right: 20, bottom: 30, left: 40};
 				
 				svg = d3.select("#vis")
 					.append("svg");
 					
 				svg.attr("width", w)
 					.attr("height", h);
-
-                var txt = d3.select("#vis")
-                    .append("div");
-
-                txt.selectAll("div")
-                    .data(dataset)
-                    .enter()
-                    .append("g")
-                    .text(function(d) {
-                        return d.albums + " ";
-                    });
 					
 				var albums = dataset.map(function(d) {
 					return d.albums;
@@ -42,12 +32,27 @@ var dataset, svg, bandScale;
 					.domain([0,37000000])
 					.range([0,h]);
 					
-				
-					
-				svg.selectAll("rect")
-					.data(dataset)
-					.enter()
-					.append("rect")
+				var g = svg.append("g")
+					.attr("transform", "translate(" + margin.left + "," + margin.top + ")");;
+
+				g.append("g")
+			      .attr("transform", "translate(0," + h + ")")
+			      .text("Test")
+			      .call(d3.axisBottom(bandScale));
+
+			    g.append("g")
+			      .call(d3.axisLeft(heightScale).ticks(100000, "%"))
+			      .append("text")
+			      .attr("transform", "rotate(-90)")
+			      .attr("y", 6)
+			      .attr("dy", "0.71em")
+			      .attr("text-anchor", "end")
+			      .text("Frequency");
+
+			    g.selectAll("rect")
+			    	.data(dataset)
+			    	.enter()
+			    	.append("rect")
 					.attr("x", function(d, i) {
 						return bandScale(d.albums);
 					})
