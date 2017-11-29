@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Whole Lotta D3</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<style>
+
+			@font-face {
+				font-family: Kashmir;
+				src: url(./font/KASHMIR.ttf);
+			}
+
+			h1 {
+				font-family: Kashmir;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container-fluid test">
+			<div class="jumbotron">
+				<h1 class="display-3">Led Zeppelin</h1>
+			</div>
+			<div class="row justify-content-lg-center align-items-center test1">
+				<div class="col-xs-auto test2">
+					<div id="vis"></div>
+					<br>
+					<label><input type="checkbox" id="descending" name="sort"> Sort descending! </label><br>
+				</div>
+			</div>
+		</div>
+		<script src="d3.js"></script>
+	</body>
+</html>
