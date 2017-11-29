@@ -41,7 +41,7 @@ var dataset, svg, bandScale;
 			      .call(d3.axisBottom(bandScale));
 
 			    g.append("g")
-			      .call(d3.axisLeft(heightScale).ticks(100000, "%"))
+			      .call(d3.axisLeft(heightScale).ticks(10, "%"))
 			      .append("text")
 			      .attr("transform", "rotate(-90)")
 			      .attr("y", 6)
