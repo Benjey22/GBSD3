@@ -9,7 +9,7 @@ var dataset, svg, bandScale;
 			});
 			
 			function createChart() {
-				var w = 1000;
+				var w = 900;
 				var h = 300;
 				var margin = {top: 20, right: 20, bottom: 30, left: 40};
 				
@@ -41,10 +41,10 @@ var dataset, svg, bandScale;
 			      .call(d3.axisBottom(bandScale));
 
 			    g.append("g")
-			      .call(d3.axisLeft(heightScale).ticks(10, "%"))
+			      .call(d3.axisLeft(heightScale).ticks(5))
 			      .append("text")
 			      .attr("transform", "rotate(-90)")
-			      .attr("y", 6)
+			      .attr("y", 5)
 			      .attr("dy", "0.71em")
 			      .attr("text-anchor", "end")
 			      .text("Sells");
@@ -53,19 +53,10 @@ var dataset, svg, bandScale;
 			    	.data(dataset)
 			    	.enter()
 			    	.append("rect")
-					.attr("x", function(d, i) {
-						return bandScale(d.albums);
-					})
-					.attr("y", function(d){
-						
-						return h - heightScale(d.s);;
-					})
-					.attr("width", function(d) {
-						return bandScale.bandwidth();
-					})
-					.attr("height", function(d) {
-						return heightScale(d.s);
-					})
+			    	.attr("x", function(d) { return bandScale(d.albums); })
+			        .attr("y", function(d) { return h - heightScale(d.s); })
+			        .attr("width", bandScale.bandwidth())
+			        .attr("height", function(d) { return heightScale(d.s); })
 					.attr("fill", function(d) {
 						return d.color;
 					})
