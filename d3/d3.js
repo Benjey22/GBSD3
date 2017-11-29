@@ -47,7 +47,7 @@ var dataset, svg, bandScale;
 			      .attr("y", 6)
 			      .attr("dy", "0.71em")
 			      .attr("text-anchor", "end")
-			      .text("Frequency");
+			      .text("Sells");
 
 			    g.selectAll("rect")
 			    	.data(dataset)
