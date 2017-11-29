@@ -9,7 +9,7 @@ var dataset, svg, bandScale;
 			});
 			
 			function createChart() {
-				var w = 1000;
+				var w = 900;
 				var h = 300;
 				var margin = {top: 20, right: 20, bottom: 30, left: 40};
 				
