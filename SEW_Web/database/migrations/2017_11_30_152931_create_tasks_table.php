@@ -17,7 +17,7 @@ class CreateTasksTable extends Migration
             $table->increments('id');
             $table->string('body');
             $table->string('description');
-            $table->bigInteger('confirmed');
+            $table->boolean('confirmed');
             $table->timestamps();
         });
     }
