@@ -1,0 +1,120 @@
+<html>
+  <head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      
+
+        function sells() {
+        	
+        	document.getElementById("title").innerHTML = "Led Zeppelin Album Sells";
+
+        	google.charts.load("current", {packages:['corechart']});
+      		google.charts.setOnLoadCallback(drawChart);
+      		function drawChart() {
+        		var data = google.visualization.arrayToDataTable([
+          			["Album", "Sells", { role: "style" } ],
+          			["Led Zeppelin", 13365000, "#D6D8D7"],
+			          ["Led Zeppelin II", 15240000, "#85645D"],
+			          ["Led Zeppelin III", 7285000, "#e0eced"],
+			          ["Led Zeppelin IV", 37000000, "color: #dfc5cf"],
+			          ["Houses of the Holy", 11900000, "orange"],
+			          ["Physical Graffiti", 17210000, "color:#aaa"],
+			          ["Presence", 3300000, "color:#bbb"],
+			          ["In Through the Outdoor", 6508000, "color:#abc"],
+			          ["Coda", 1060000, "color:#cba"],
+			        ]);
+
+			        var view = new google.visualization.DataView(data);
+			        view.setColumns([0, 1,
+			                         { calc: "stringify",
+			                           sourceColumn: 1,
+			                           type: "string",
+			                           role: "annotation" },
+			                         2]);
+
+			        var options = {
+			          width: 1300,
+			          height: 400,
+			          bar: {groupWidth: "85%"},
+			          legend: { position: "none" },
+        			};
+
+			        //var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+			        var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"), document.getElementById("filter_div"));
+			        chart.draw(view, options);
+			        }
+    			}
+
+    	function ranking() {
+
+    		document.getElementById("title").innerHTML = "Ranking: Top 9 Led Zeppelin Album - Worst to Best";
+
+    		google.charts.load("current", {packages:['corechart']});
+      		google.charts.setOnLoadCallback(drawChart);
+      		function drawChart() {
+        		var data = google.visualization.arrayToDataTable([
+          			["Album", "Rank - Nr", { role: "style" } ],
+          			["In Through the Outdoor", 9, "color:#abc"],
+          			["Presence", 8, "color:#bbb"],
+          			["Coda", 7, "color:#cba"],
+          			["Houses of the Holy", 6, "orange"],
+          			["Led Zeppelin III", 5, "#e0eced"],
+          			["Led Zeppelin", 4, "#D6D8D7"],
+          			["Physical Graffiti", 3, "color:#aaa"],
+			        ["Led Zeppelin II", 2, "#85645D"],
+			        ["Led Zeppelin IV", 1, "color: #dfc5cf"]		          
+			        ]);
+
+			        var view = new google.visualization.DataView(data);
+			        view.setColumns([0, 1,
+			                         { calc: "stringify",
+			                           sourceColumn: 1,
+			                           type: "string",
+			                           role: "annotation" },
+			                         2]);
+
+			        var options = {
+			          width: 1300,
+			          height: 400,
+			          bar: {groupWidth: "95%"},
+			          legend: { position: "none" },
+        			};
+
+			        //var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+			        var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"), document.getElementById("filter_div"));
+			        chart.draw(view, options);
+			        }
+    			}
+  </script>
+
+  <style >
+  	#title {
+  		position:relative;
+  		left:75px;
+  		z-index:100;
+  		top:50px;
+  		font-family:Arial;
+  	}
+
+  	#switch {
+  		position: relative;
+  		top:200px;
+  		left:75px;
+  	}
+  </style>
+
+  </head>
+
+  <body>
+  	<h1 id="title">Led Zeppelin Album </h1>
+    <!--Div that will hold the pie chart-->
+    <div id="columnchart_values" style="width: 900px; height: 300px;"></div>
+    <div id="filter_div"></div>
+
+    <div id="switch">
+    	<button onclick="sells()">Album Sells</button>
+    	<button onClick="ranking()">Album Ranking</button>
+    </div>
+  </body>
+</html>
