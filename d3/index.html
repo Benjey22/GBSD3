@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>D3 Project</title>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+		<style>
+            h1, label, div { text-align:center; font-family:'Verdana'; font-weight:normal; margin-left:auto; margin-right:auto; }
+
+            svg {
+                margin-left:auto;
+                margin-right:auto;
+                display:block;
+            }
+
+            rect:hover { opacity:0.7; }
+
+            .axis path, .axis line { fill:none; stroke: #000; shape-rendering:crispEdges;}
+
+            
+		</style>
+	</head>
+	<body>
+		<h1>Led Zeppelin Album Sells!</h1>
+			
+        <script src="bar.js"></script>
+        
+        <br>
+        <div>
+            <label><input type="checkbox" id="descending" name="sort"> Sort descending! </label>
+        </div>
+
+        <script src="sort.js"></script>
+	</body>
+</html>
