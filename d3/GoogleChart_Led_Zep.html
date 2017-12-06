@@ -113,6 +113,11 @@
     header {
       background-color: lightgray;
     }
+
+    #test {
+      margin-left: 460px;
+      margin-right: 460px;
+    }
   </style>
 
   </head>
@@ -121,15 +126,19 @@
   <header>
     <img src="img/Led_Zeppelin-Logo.png" alt="Logo">
   </header>
+  <div id="test">
   	<h1 id="title">Led Zeppelin Album </h1>
-    <!--Div that will hold the pie chart-->
-    <div id="columnchart_values" style="width: 900px; height: 300px;"></div>
-    <div id="filter_div"></div>
 
-    <div id="switch">
-      <button onclick="sells()">Album Sells</button>
-      <button onClick="ranking()">Album Ranking</button>
+      <div id="columnchart_values" style="width: 900px; height: 300px;"></div>
+      <div id="filter_div"></div>
+
+      <div id="switch">
+        <button onclick="sells()">Album Sells</button>
+        <button onClick="ranking()">Album Ranking</button>
+      </div>
     </div>
+    <!--Div that will hold the pie chart-->
+
 
   </body>
 </html>
