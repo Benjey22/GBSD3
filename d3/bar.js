@@ -1,6 +1,6 @@
 var margin = { top:20, right:10, bottom:100, left: 75},
     width = 700 - margin.right - margin.left,
-    height = 400 - margin.top - margin.bottom;
+    height = 500 - margin.top - margin.bottom;
 
 var svg = d3.select('body')
             .append('svg')
@@ -66,7 +66,7 @@ d3.csv("zep.csv", function(error, data) {
             .append('text')
             .text(function(d) { return d.s; })
             .attr('x', function(d) { return xScale(d.albums) + xScale.rangeBand()/2; })
-            .attr('y', function(d) { return yScale(d.s) + 12; })
+            .attr('y', function(d) { return yScale(d.s) + 10; })
             .style("fill", "white")
             .style("font-size", "12px")
             .style("text-anchor", "middle");
@@ -133,7 +133,7 @@ d3.csv("zep.csv", function(error, data) {
         .transition().duration(1000)
         .text(function(d) { return d.s; })
         .attr('x', function(d) { return xScale(d.albums) + xScale.rangeBand()/2; })
-        .attr('y', function(d) { return yScale(d.s) + 12; })
+        .attr('y', function(d) { return yScale(d.s) + 10; })
         .style("fill", "white")
         .style("font-size", "12px")
         .style("text-anchor", "middle");
